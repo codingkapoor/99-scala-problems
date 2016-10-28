@@ -18,9 +18,12 @@ object P01 {
 
   // Using recursive approach to ignore first element in a list up until it is the last element in that list
   def lastRecursive[A](ls: List[A]): A = ls match {
+    
+    case Nil         => throw new NoSuchElementException("List is empty.")
+
     case head :: Nil => head
     case _ :: tail   => lastRecursive(tail)
-    case _           => throw new NoSuchElementException("Empty List")
+
   }
 
 }
