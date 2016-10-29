@@ -6,20 +6,30 @@ object P02 {
   // and then filtering out the element with the index that is equal to the size of the list minus 2
   def secondLastElement[A](ls: List[A]) = {
 
-    val indexOfSecondLastElement = ls.size - 2
+    if (ls == Nil)
+      throw new NoSuchElementException("List is empty.")
 
-    val Some((a, b)) = (ls zipWithIndex) filter { case (x, y) => y == `indexOfSecondLastElement` } lift 0
+    val List((a, b)) = (ls zipWithIndex) filter { case (x, y) => y == (ls.size - 2) }
 
     a
   }
 
-  // Using Scala's built-in "init" method to retrieve subset of the specified list with all elements  
-  // less last element and then using "last" method to retrieve the last element of the sub list 
+  def secondLastElementII[A](ls: List[A]): A = {
+
+    val x = (ls lift ls.size - 2) match {
+      case Some(y) => y
+      case None    => throw new NoSuchElementException
+    }
+
+    x
+  }
+
   def secondLastBuiltin[A](ls: List[A]): A =
     if (ls.isEmpty) throw new NoSuchElementException("List is empty.")
     else ls.init.last
 
-  // Using recursive approach to ignore first element in a list up until it is the second last element in that list
+  def secondLastBuiltinII[A](ls: List[A]): A = ls take (ls.size - 1) last
+
   def secondLastRecursive[A](ls: List[A]): A = ls match {
 
     case Nil           => throw new NoSuchElementException("List is empty.")
