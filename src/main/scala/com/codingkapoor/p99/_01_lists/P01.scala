@@ -1,6 +1,6 @@
 package com.codingkapoor.p99._01_lists
 
-object P01 extends App {
+object P01 {
 
   // Using Scala's "zipWithIndex" method to build tuples of elements with their indexes 
   // and then filtering out the element with the index that is equal to the size of the list minus 1 
@@ -34,8 +34,6 @@ object P01 extends App {
     case _ :: tail   => lastRecursive(tail)
 
   }
-
-  println(lastElement(List()))
 
 }
 
