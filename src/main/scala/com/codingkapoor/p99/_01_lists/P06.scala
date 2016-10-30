@@ -2,9 +2,11 @@ package com.codingkapoor.p99._01_lists
 
 object P06 {
 
+  def isPalindromeBuiltin[A](ls: List[A]): Boolean = ls == ls.reverse
+
   // Approach is to divide the list equally and then compare the elements from each of the sub lists.
   // List(1, 2, 3, 2, 1) would be divided into sub lists List(1, 2, 3) and List(3, 2, 1).
-  def isPalindrome[A](ls: List[A]): Boolean = {
+  def isPalindromeFunctional[A](ls: List[A]): Boolean = {
 
     val sizeOfSublists = (ls.size / 2.0).ceil.toInt
 
@@ -16,8 +18,32 @@ object P06 {
     // returned Vector would be of size 0. 
     (0 to sizeOfSublists - 1) filter { i => sublist1(i) != sublist2(sublist2.size - 1 - i) } isEmpty
 
+    // Or
+    // map would return a Vector of booleans which could be reduced to a single boolean result
+    // ((0 to sizeOfSublists - 1) map { i => sublist1(i) == sublist2(sublist2.size - 1 - i) } foldLeft true) (_ && _)
+
+    // Or
+    // forall returns true if for every i the predicate holds true
+    // (0 to sizeOfSublists - 1) forall { i => ls1(i) == ls2(ls2.size - 1 - i) }
   }
 
-  def isPalindromeBuiltin[A](ls: List[A]): Boolean = ls == ls.reverse
+  // If we need to reverse the list we can simply do equality comparison instead.
+  def isPalindromeFunctionalII[A](ls: List[A]): Boolean = ls zip (ls.reverse) forall { case (a, b) => a == b }
+
+  def isPalindromeRecursive[A](ls: List[A]): Boolean = ls match {
+
+    case Nil                             => true
+
+    case x :: Nil                        => true
+    case x :: xs if (x equals (xs.last)) => isPalindromeRecursive(xs dropRight 1)
+
+    case _                               => false
+  }
+
+  def isPalindromeRecursiveII[A](ls: List[A]): Boolean = {
+    if (ls.isEmpty || ls.size == 1) true
+    else if (ls.head == ls.last) isPalindromeRecursiveII(ls.slice(1, ls.size - 1))
+    else false
+  }
 
 }
