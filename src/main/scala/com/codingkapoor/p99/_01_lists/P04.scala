@@ -14,12 +14,12 @@ object P04 {
   
   def lengthFunctionalIV[A](ls: List[A]): Int = ls.view map { _ => 1 } sum
 
-  def lengthRecursiveI[A](ls: List[A]): Int = ls match {
+  def lengthRecursive[A](ls: List[A]): Int = ls match {
     case Nil     => 0
-    case _ :: xs => 1 + lengthRecursiveI(xs)
+    case _ :: xs => 1 + lengthRecursive(xs)
   }
 
-  def lengthRecursiveII[A](ls: List[A]): Int = {
+  def lengthTailRecursive[A](ls: List[A]): Int = {
 
     def lengthR(result: Int, list: List[A]): Int = list match {
       case Nil     => result

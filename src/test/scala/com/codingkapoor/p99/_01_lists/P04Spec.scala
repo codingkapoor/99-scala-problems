@@ -9,30 +9,30 @@ class P04Spec extends FlatSpec with Matchers {
   }
 
   "lengthBuiltinII" should "return the length of the list" in {
-    P04.lengthBuiltinI(List(1)) should equal(1)
+    P04.lengthBuiltinII(List(1)) should equal(1)
   }
 
   "lengthFunctionalI" should "return the length of the list" in {
-    P04.lengthBuiltinI(Nil) should equal(0)
+    P04.lengthFunctionalI(Nil) should equal(0)
   }
 
   "lengthFunctionalII" should "return the length of the list" in {
-    P04.lengthBuiltinI(List('a', 'b')) should equal(2)
+    P04.lengthFunctionalII(List('a', 'b')) should equal(2)
   }
 
   "lengthFunctionalIII" should "return the length of the list" in {
-    P04.lengthBuiltinI(List("a")) should equal(1)
+    P04.lengthFunctionalIII(List("a")) should equal(1)
   }
 
   "lengthFunctionalIV" should "return the length of the list" in {
-    P04.lengthBuiltinI(List()) should equal(0)
+    P04.lengthFunctionalIV(List()) should equal(0)
   }
 
-  "lengthRecursiveI" should "return the length of the list" in {
-    P04.lengthBuiltinI(List(1, 2, 3)) should equal(3)
+  "lengthRecursive" should "return the length of the list" in {
+    P04.lengthRecursive(List(1, 2, 3)) should equal(3)
   }
 
-  "lengthRecursiveII" should "return the length of the list" in {
-    P04.lengthBuiltinI(List.empty[String]) should equal(0)
+  "lengthTailRecursive" should "return the length of the list" in {
+    P04.lengthTailRecursive(List.empty[String]) should equal(0)
   }
 }
