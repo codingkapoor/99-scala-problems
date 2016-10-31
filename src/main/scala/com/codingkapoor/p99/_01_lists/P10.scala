@@ -1,6 +1,6 @@
 package com.codingkapoor.p99._01_lists
 
-object P10 extends App {
+object P10 {
 
   import P09._
 
