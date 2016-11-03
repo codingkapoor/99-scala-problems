@@ -32,6 +32,6 @@ object P21 {
     insertAtR(pos, Nil, ls)
   }
 
-  // folLeft won't be an appropriate solution here since we don't really need to traverse 
+  // foldLeft won't be an appropriate solution here since we don't really need to traverse 
   // the complete list just to insert an element at a given position.
 }
