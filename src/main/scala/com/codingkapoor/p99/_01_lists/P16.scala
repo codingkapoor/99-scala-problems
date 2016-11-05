@@ -2,25 +2,21 @@ package com.codingkapoor.p99._01_lists
 
 object P16 {
 
-  def dropFunctional[T](n: Int, ls: List[T]) =
+  def dropFunctional[T](n: Int, ls: List[T]): List[T] =
     // ls.zipWithIndex filter { case (x, y) => (y + 1) % n != 0 } map { case (x, y) => x }
     ls.zipWithIndex.withFilter { case (x, y) => (y + 1) % n != 0 } map { _._1 }
 
-  def dropFunctionalII[T](n: Int, ls: List[T]) = (ls.zipWithIndex foldLeft (Nil: List[T])) {
-    (acc, x) =>
-      x match {
-        case (p, q) if ((q + 1) % n != 0) => acc ::: List(p)
-        case _                            => acc
-      }
-  }
+  def dropFunctionalII[T](n: Int, ls: List[T]): List[T] =
+    (ls.zipWithIndex foldLeft (Nil: List[T])) {
+      case (acc, (p, q)) if ((q + 1) % n != 0) => acc ::: List(p)
+      case (acc, (p, q))                       => acc
+    }
 
   def dropRecursive[T](n: Int, ls: List[T]): List[T] = {
 
     def dropR[T](list: List[T]): List[T] = list.splitAt(n) match {
-
       case (xs, Nil) if (xs.length < n) => xs
       case (xs, Nil)                    => xs.init
-
       case (xs, ys)                     => xs.init ::: dropR(ys)
     }
 
@@ -30,7 +26,6 @@ object P16 {
   def dropRecursiveII[T](n: Int, ls: List[T]): List[T] = {
 
     def dropR[T](list: List[T]): List[T] = list match {
-
       case Nil                   => Nil
 
       case xs if (xs.length < n) => xs.take(n) ::: dropR(xs.drop(n))
@@ -40,7 +35,7 @@ object P16 {
     dropR(ls)
   }
 
-  def dropTailRecursive[T](n: Int, ls: List[T]) = {
+  def dropTailRecursive[T](n: Int, ls: List[T]): List[T] = {
 
     def dropR[T](t: Int, result: List[T], list: List[T]): List[T] = list match {
       case Nil                 => result

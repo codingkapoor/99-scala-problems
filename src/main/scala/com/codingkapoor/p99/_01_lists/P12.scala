@@ -2,29 +2,26 @@ package com.codingkapoor.p99._01_lists
 
 object P12 {
 
-  def decodeFunctional[T](ls: List[(Int, T)]) = {
+  def decodeFunctional[T](ls: List[(Int, T)]): List[T] = {
     (ls foldLeft (Nil: List[T])) {
-      (acc, x) =>
-        x match {
-          case (p, q) =>
-            {
-              val j = for (i <- 1 to p) yield q
-              acc ::: j.toList
-            }
-          case _ => Nil
-        }
+      case (acc, (p, q)) => {
+        val j = for (i <- 1 to p) yield q
+        acc ::: j.toList
+      }
+
+      case _ => Nil
     }
   }
 
-  def decodeFunctionalI[T](ls: List[(Int, T)]) = ls map {
+  def decodeFunctionalI[T](ls: List[(Int, T)]): List[T] = ls map {
     case (x, y) => for (i <- 1 to x) yield y
   } flatten
 
-  def decodeFunctionalII[T](ls: List[(Int, T)]) = ls flatMap {
+  def decodeFunctionalII[T](ls: List[(Int, T)]): List[T] = ls flatMap {
     case (x, y) => for (i <- 1 to x) yield y
   }
 
-  def decodeBuiltin[T](ls: List[(Int, T)]) = ls flatMap {
+  def decodeBuiltin[T](ls: List[(Int, T)]): List[T] = ls flatMap {
     case (p, q) => List.fill(p)(q)
   }
 

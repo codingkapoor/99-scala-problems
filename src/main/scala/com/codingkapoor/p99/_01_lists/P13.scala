@@ -2,7 +2,7 @@ package com.codingkapoor.p99._01_lists
 
 object P13 {
 
-  def encodeDirectRecursive[T](ls: List[T]) = {
+  def encodeDirectRecursive[T](ls: List[T]): List[(Int, T)] = {
 
     def encodeDirectR[T](list: List[T]): List[(Int, T)] = list match {
       case Nil => Nil
@@ -12,7 +12,7 @@ object P13 {
     encodeDirectR(ls)
   }
 
-  def encodeDirectRecursiveII[T](ls: List[T]) = {
+  def encodeDirectRecursiveII[T](ls: List[T]): List[(Int, T)] = {
 
     def encodeDirectR[T](list: List[T]): List[(Int, T)] = list match {
       case Nil => Nil

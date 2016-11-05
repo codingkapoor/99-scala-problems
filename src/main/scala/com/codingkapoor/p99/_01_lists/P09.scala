@@ -21,7 +21,7 @@ object P09 {
     case xs  => xs.takeWhile { _ == ls.head } :: packRecursive(xs.dropWhile { _ == ls.head })
   }
 
-  def packTailRecursive[T](ls: List[T]) = {
+  def packTailRecursive[T](ls: List[T]): List[List[T]] = {
 
     def packR(result: List[List[T]], list: List[T]): List[List[T]] = list match {
       case Nil => result
@@ -32,7 +32,8 @@ object P09 {
   }
 
   // Using built-in 'scan' function
-  def packTailRecursiveII[T](ls: List[T]) = {
+  def packTailRecursiveII[T](ls: List[T]): List[List[T]] = {
+    
     def packR[T](result: List[List[T]], list: List[T]): List[List[T]] = list match {
       case Nil => result
       case xs => {

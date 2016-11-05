@@ -4,16 +4,14 @@ object P01 {
 
   // Using Scala's "zipWithIndex" method to build tuples of elements with their indexes 
   // and then filtering out the element with the index that is equal to the size of the list minus 1 
-  def lastElement[A](ls: List[A]) = {
-
+  def lastElement[T](ls: List[T]): T = {
     if (ls == Nil) throw new NoSuchElementException("List is empty.")
-
+    
     val List((a, b)) = (ls zipWithIndex) filter { case (x, y) => y == (ls.size - 1) }
-
     a
   }
 
-  def lastElementII[A](ls: List[A]): A = {
+  def lastElementII[T](ls: List[T]): T = {
 
     val x = (ls lift ls.size - 1) match {
       case Some(y) => y
@@ -23,11 +21,10 @@ object P01 {
     x
   }
 
-  def lastBuiltin[A](ls: List[A]): A = ls.last
+  def lastBuiltin[T](ls: List[T]): T = ls.last
 
   // Using recursive approach to ignore first element in a list up until it is the last element in that list
   def lastRecursive[A](ls: List[A]): A = ls match {
-
     case Nil         => throw new NoSuchElementException("List is empty.")
 
     case head :: Nil => head
@@ -36,4 +33,3 @@ object P01 {
   }
 
 }
-

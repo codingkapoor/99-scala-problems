@@ -2,26 +2,26 @@ package com.codingkapoor.p99._01_lists
 
 object P04 {
 
-  def lengthBuiltinI[A](ls: List[A]): Int = ls length
+  def lengthBuiltinI[T](ls: List[T]): Int = ls length
 
-  def lengthBuiltinII[A](ls: List[A]): Int = ls size
+  def lengthBuiltinII[T](ls: List[T]): Int = ls size
 
-  def lengthFunctionalI[A](ls: List[A]): Int = (ls foldLeft 0) { (acc, _) => acc + 1 }
+  def lengthFunctionalI[T](ls: List[T]): Int = (ls foldLeft 0) { (acc, _) => acc + 1 }
   
-  def lengthFunctionalII[A](ls: List[A]): Int = (ls.view foldLeft 0) { (acc, _) => acc + 1 }
+  def lengthFunctionalII[T](ls: List[T]): Int = (ls.view foldLeft 0) { (acc, _) => acc + 1 }
 
-  def lengthFunctionalIII[A](ls: List[A]): Int = ls map { _ => 1 } sum
+  def lengthFunctionalIII[T](ls: List[T]): Int = ls map { _ => 1 } sum
   
-  def lengthFunctionalIV[A](ls: List[A]): Int = ls.view map { _ => 1 } sum
+  def lengthFunctionalIV[T](ls: List[T]): Int = ls.view map { _ => 1 } sum
 
-  def lengthRecursive[A](ls: List[A]): Int = ls match {
+  def lengthRecursive[T](ls: List[T]): Int = ls match {
     case Nil     => 0
     case _ :: xs => 1 + lengthRecursive(xs)
   }
 
-  def lengthTailRecursive[A](ls: List[A]): Int = {
+  def lengthTailRecursive[T](ls: List[T]): Int = {
 
-    def lengthR(result: Int, list: List[A]): Int = list match {
+    def lengthR(result: Int, list: List[T]): Int = list match {
       case Nil     => result
       case _ :: xs => lengthR(result + 1, xs)
     }

@@ -9,8 +9,7 @@ class P22Spec extends FlatSpec with Matchers {
   }
 
   "rangeBuiltin" should "return IllegalArgumentException if parameter 'end' is lesser than parameter 'begin'" in {
-    val e = intercept[IllegalArgumentException] { P22.rangeBuiltin(9, 4) }
-    e.getMessage.equals("Parameter 'end' has to be greater than or equal to parameter 'begin'")
+    intercept[IllegalArgumentException] { P22.rangeBuiltin(9, 4) }
   }
 
   "rangeBuiltinII" should "return a list containing all integers within a given range" in {
@@ -18,8 +17,7 @@ class P22Spec extends FlatSpec with Matchers {
   }
 
   "rangeBuiltinII" should "return IllegalArgumentException if parameter 'end' is lesser than parameter 'begin'" in {
-    val e = intercept[IllegalArgumentException] { P22.rangeBuiltinII(9, 4) }
-    e.getMessage.equals("Parameter 'end' has to be greater than or equal to parameter 'begin'")
+    intercept[IllegalArgumentException] { P22.rangeBuiltinII(9, 4) }
   }
 
   "rangeTailRecursive" should "return a list containing all integers within a given range" in {
@@ -27,7 +25,6 @@ class P22Spec extends FlatSpec with Matchers {
   }
 
   "rangeTailRecursive" should "return IllegalArgumentException if parameter 'end' is lesser than parameter 'begin'" in {
-    val e = intercept[IllegalArgumentException] { P22.rangeTailRecursive(9, 4) }
-    e.getMessage.equals("Parameter 'end' has to be greater than or equal to parameter 'begin'")
+    intercept[IllegalArgumentException] { P22.rangeTailRecursive(9, 4) }
   }
 }

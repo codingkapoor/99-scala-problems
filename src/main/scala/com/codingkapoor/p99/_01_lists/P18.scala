@@ -5,7 +5,7 @@ object P18 extends App {
   def sliceBuiltin[T](begin: Int, end: Int, ls: List[T]): List[T] = {
     if (ls == Nil) Nil
     else if (!areParametersValid(begin, end, ls.size))
-      throw new IllegalArgumentException("Parameters 'begin' and/or 'end' are incorrect.")
+      throw new IllegalArgumentException
 
     else ls drop (begin) take (end - begin)
   }
@@ -13,7 +13,7 @@ object P18 extends App {
   def sliceBuiltinII[T](begin: Int, end: Int, ls: List[T]): List[T] = {
     if (ls == Nil) Nil
     else if (!areParametersValid(begin, end, ls.size))
-      throw new IllegalArgumentException("Parameters 'begin' and/or 'end' are incorrect.")
+      throw new IllegalArgumentException
 
     else ls slice (begin, end)
   }
@@ -21,7 +21,7 @@ object P18 extends App {
   def sliceBuiltinIII[T](begin: Int, end: Int, ls: List[T]): List[T] = {
     if (ls == Nil) Nil
     else if (!areParametersValid(begin, end, ls.size))
-      throw new IllegalArgumentException("Parameters 'begin' and/or 'end' are incorrect.")
+      throw new IllegalArgumentException
 
     else ls.splitAt(begin)._2.splitAt(end - begin)._1
   }
@@ -29,7 +29,7 @@ object P18 extends App {
   def sliceFunctional[T](begin: Int, end: Int, ls: List[T]): List[T] = {
     if (ls == Nil) Nil
     else if (!areParametersValid(begin, end, ls.size))
-      throw new IllegalArgumentException("Parameters 'begin' and/or 'end' are incorrect.")
+      throw new IllegalArgumentException
 
     else ls zip (1 to end) filter { _._2 > begin } map { _._1 }
   }
@@ -37,7 +37,7 @@ object P18 extends App {
   def sliceFunctionalII[T](begin: Int, end: Int, ls: List[T]): List[T] = {
     if (ls == Nil) Nil
     else if (!areParametersValid(begin, end, ls.size))
-      throw new IllegalArgumentException("Parameters 'begin' and/or 'end' are incorrect.")
+      throw new IllegalArgumentException
 
     else (ls zip (1 to end) filter { _._2 > begin } unzip)._1
   }
@@ -45,7 +45,7 @@ object P18 extends App {
   def sliceFunctionalIII[T](begin: Int, end: Int, ls: List[T]): List[T] = {
     if (ls == Nil) Nil
     else if (!areParametersValid(begin, end, ls.size))
-      throw new IllegalArgumentException("Parameters 'begin' and/or 'end' are incorrect.")
+      throw new IllegalArgumentException
 
     else for { (x, y) <- ls zip (1 to end) if y > begin } yield x
   }
@@ -54,7 +54,7 @@ object P18 extends App {
   def sliceFunctionalIV[T](begin: Int, end: Int, ls: List[T]): List[T] = {
     if (ls == Nil) Nil
     else if (!areParametersValid(begin, end, ls.size))
-      throw new IllegalArgumentException("Parameters 'begin' and/or 'end' are incorrect.")
+      throw new IllegalArgumentException
 
     else for { (x, y) <- ls.zipWithIndex if (y >= begin && y < end) } yield x
   }
@@ -62,7 +62,7 @@ object P18 extends App {
   def sliceFunctionalV[T](begin: Int, end: Int, ls: List[T]): List[T] = {
     if (ls == Nil) Nil
     else if (!areParametersValid(begin, end, ls.size))
-      throw new IllegalArgumentException("Parameters 'begin' and/or 'end' are incorrect.")
+      throw new IllegalArgumentException
 
     else (ls zip (1 to end) foldLeft (Nil: List[T])) {
       case (acc, (x, y)) if (y > begin) => acc ::: List(x)
@@ -73,7 +73,7 @@ object P18 extends App {
   def sliceFunctionalVI[T](begin: Int, end: Int, ls: List[T]) = {
     if (ls == Nil) Nil
     else if (!areParametersValid(begin, end, ls.size))
-      throw new IllegalArgumentException("Parameters 'begin' and/or 'end' are incorrect.")
+      throw new IllegalArgumentException
 
     else (ls zip (1 to end) foldRight (Nil: List[T])) {
       case ((x, y), acc) if (y > begin) => x :: acc
@@ -92,7 +92,7 @@ object P18 extends App {
 
     if (ls == Nil) Nil
     else if (!areParametersValid(begin, end, ls.size))
-      throw new IllegalArgumentException("Parameters 'begin' and/or 'end' are incorrect.")
+      throw new IllegalArgumentException
 
     else sliceR(0, Nil, ls)
   }
@@ -108,7 +108,7 @@ object P18 extends App {
 
     if (ls == Nil) Nil
     else if (!areParametersValid(begin, end, ls.size))
-      throw new IllegalArgumentException("Parameters 'begin' and/or 'end' are incorrect.")
+      throw new IllegalArgumentException
 
     else sliceR(Nil, ls.zipWithIndex)
   }

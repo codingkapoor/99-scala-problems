@@ -2,26 +2,26 @@ package com.codingkapoor.p99._01_lists
 
 object P05 {
   
-  def reverseBuiltin[A](ls: List[A]): List[A] = ls.reverse
+  def reverseBuiltin[T](ls: List[T]): List[T] = ls.reverse
 
-  def reverseFunctional[A](ls: List[A]): List[A] = ls.foldLeft(List[A]()) { (r, h) => h :: r }
+  def reverseFunctional[T](ls: List[T]): List[T] = ls.foldLeft(List[T]()) { (r, h) => h :: r }
 
-  def reverseRecursive[A](ls: List[A]): List[A] = ls match {
+  def reverseRecursive[T](ls: List[T]): List[T] = ls match {
     case Nil     => Nil
     case x :: xs => reverseRecursive(xs) ::: List(x)
   }
 
   // Building a left bounded sequence out of the given list
-  def reverseRecursiveII[A](ls: List[A]): Seq[A] = ls match {
+  def reverseRecursiveII[T](ls: List[T]): List[T] = ls match {
     case Nil      => Nil
-
-    case y :: Nil => Nil :+ y
+    
+    case y :: Nil => (Nil :+ y).toList
     case x :: xs  => reverseRecursiveII(xs) :+ x
   }
 
-  def reverseTailRecursive[A](ls: List[A]): List[A] = {
+  def reverseTailRecursive[T](ls: List[T]): List[T] = {
 
-    def reverseR(result: List[A], list: List[A]): List[A] = list match {
+    def reverseR(result: List[T], list: List[T]): List[T] = list match {
       case Nil     => result
       case x :: xs => reverseR(x :: result, xs)
     }
