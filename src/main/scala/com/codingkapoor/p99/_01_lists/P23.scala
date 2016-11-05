@@ -2,7 +2,7 @@ package com.codingkapoor.p99._01_lists
 
 import scala.util.Random
 
-object P23 extends App {
+object P23 {
 
   def randomSelectFunctional[T](r: Int, ls: List[T]): List[T] = {
     if (ls == Nil) Nil

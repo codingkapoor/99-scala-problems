@@ -1,6 +1,6 @@
 package com.codingkapoor.p99._01_lists
 
-object P18 extends App {
+object P18 {
 
   def sliceBuiltin[T](begin: Int, end: Int, ls: List[T]): List[T] = {
     if (ls == Nil) Nil

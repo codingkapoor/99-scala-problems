@@ -1,6 +1,6 @@
 package com.codingkapoor.p99._01_lists
 
-object P19 extends App {
+object P19 {
 
   def rotateBuiltin[T](places: Int, ls: List[T]): List[T] = {
     val xs = ls.splitAt(if (places < 0) ls.size + places else places)
@@ -25,5 +25,4 @@ object P19 extends App {
     rotateR(t, Nil, ls)
   }
 
-  println(rotateTailRecursive(11, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)))
 }

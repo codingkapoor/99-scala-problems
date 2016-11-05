@@ -1,6 +1,6 @@
 package com.codingkapoor.p99._01_lists
 
-object P20 extends App {
+object P20 {
 
   def removeAtBuiltin[T](pos: Int, ls: List[T]): (List[T], T) = ls.splitAt(pos + 1) match {
     case (Nil, Nil) => throw new NoSuchElementException("List is empty.")
@@ -38,7 +38,5 @@ object P20 extends App {
     if (ls == Nil) throw new NoSuchElementException("List is empty.")
     removeAtR(pos + 1, Nil, ls)
   }
-
-  println(removeAtBuiltinII(1, List('a, 'b, 'c, 'd)))
 
 }
