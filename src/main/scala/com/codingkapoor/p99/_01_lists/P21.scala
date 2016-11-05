@@ -18,6 +18,10 @@ object P21 {
 
   // We get error 'type mismatch; found : List[Any] required: List[T]' for keeping
   // return type of 'insertAtR' as 'List[T]'. The reason still being unknown to me as of now.
+  
+  // This was happening because I was defining method 'insertAtR' with the type parameter similar
+  // to the type parameter of its enclosing method 'insertAtTailRecursive'. I still need to 
+  // understand the reason behind it.
   def insertAtTailRecursive[T](elem: T, pos: Int, ls: List[T]): List[T] = {
 
     @scala.annotation.tailrec
