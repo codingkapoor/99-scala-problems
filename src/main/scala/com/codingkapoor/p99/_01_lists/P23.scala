@@ -9,20 +9,20 @@ object P23 extends App {
     else Seq.fill(r)(Random.nextInt(ls.size)).toList map { i => ls(i) }
   }
 
-  def randomSelectTailRecursive[T](r: Int, ls: List[T]): List[Any] = {
+  def randomSelectTailRecursive[T](r: Int, ls: List[T]): List[T] = {
 
-    def randomSelectR[T](t: Int, result: List[T], list: List[T]): List[Any] = {
-      val (xs, x) = P20.removeAtBuiltin(Random.nextInt(ls.size), ls)
+    def randomSelectR(t: Int, result: List[T]): List[T] = {
+      val (xs, x) = P20.removeAtBuiltin[T](Random.nextInt(ls.size), ls)
 
       if (t == 0) {
         result
       } else {
-        randomSelectR(t - 1, x :: result, xs)
+        randomSelectR(t - 1, x :: result)
       }
     }
 
     if (ls == Nil) Nil
-    else randomSelectR(r, Nil, ls)
+    else randomSelectR(r, Nil)
   }
 
 }
