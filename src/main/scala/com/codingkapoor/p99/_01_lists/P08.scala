@@ -1,7 +1,17 @@
 package com.codingkapoor.p99._01_lists
 
-import scala.annotation.tailrec
-
+/**
+ * 
+ * P08 (**) Eliminate consecutive duplicates of list elements.
+ * [If a list contains repeated elements they should be replaced with a single copy of the element. 
+ * The order of the elements should not be changed.]
+ *
+ * Example:
+ *
+ * scala> compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+ * res0: List[Symbol] = List('a, 'b, 'c, 'a, 'd, 'e)
+ * 
+ */
 object P08 {
 
   // In order to preserve the order of the elements we need to concatenate every unique subsequent element 
@@ -22,6 +32,9 @@ object P08 {
     case h :: tail => h :: compressRecursive(tail.dropWhile(_ == h))
   }
 
+  
+  import scala.annotation.tailrec
+  
   // Using pattern matching a list can always be traversed from left to right. 
   def compressTailRecursive[T](ls: List[T]): List[T] = {
 

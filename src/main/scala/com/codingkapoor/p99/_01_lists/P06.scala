@@ -1,5 +1,14 @@
 package com.codingkapoor.p99._01_lists
 
+/**
+ * 
+ * P06 (*) Find out whether a list is a palindrome.
+ * Example:
+ *
+ * scala> isPalindrome(List(1, 2, 3, 2, 1))
+ * res0: Boolean = true
+ * 
+ */
 object P06 {
 
   def isPalindromeBuiltin[T](ls: List[T]): Boolean = ls == ls.reverse

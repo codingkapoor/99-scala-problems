@@ -1,5 +1,14 @@
 package com.codingkapoor.p99._01_lists
 
+/**
+ * 
+ * P21 (*) Insert an element at a given position into a list.
+ * Example:
+ *
+ * scala> insertAt('new, 1, List('a, 'b, 'c, 'd))
+ * res0: List[Symbol] = List('a, 'new, 'b, 'c, 'd)
+ * 
+ */
 object P21 {
 
   def insertAtBuiltin[T](elem: T, pos: Int, ls: List[T]): List[T] = {
