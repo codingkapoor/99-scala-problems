@@ -14,10 +14,10 @@ Solutions and tests for Phil Gold's [S-99: Ninety-Nine Scala Problems](http://ap
 ## Lists
 
 ### [P01](https://github.com/codingkapoor/99-scala-problems/blob/master/src/main/scala/com/codingkapoor/p99/_01_lists/P01.scala) (*) Find the last element of a list.
-``` scala
-scala> last(List(1, 1, 2, 3, 5, 8))
-res0: Int = 8
-```
+  ``` scala
+  scala> last(List(1, 1, 2, 3, 5, 8))
+  res0: Int = 8
+  ```
 
 ### [P02](https://github.com/codingkapoor/99-scala-problems/blob/master/src/main/scala/com/codingkapoor/p99/_01_lists/P02.scala) (*) Find the last but one element of a list.
 ``` scala
