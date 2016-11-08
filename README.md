@@ -20,34 +20,34 @@ Solutions and tests for Phil Gold's [S-99: Ninety-Nine Scala Problems](http://ap
   ```
 
 ### [P02](https://github.com/codingkapoor/99-scala-problems/blob/master/src/main/scala/com/codingkapoor/p99/_01_lists/P02.scala) (*) Find the last but one element of a list.
-``` scala
-scala> penultimate(List(1, 1, 2, 3, 5, 8))
-res0: Int = 5
-```
+  ``` scala
+  scala> penultimate(List(1, 1, 2, 3, 5, 8))
+  res0: Int = 5
+  ```
 
 ### [P03](https://github.com/codingkapoor/99-scala-problems/blob/master/src/main/scala/com/codingkapoor/p99/_01_lists/P03.scala) (*) Find the Kth element of a list.
-``` scala
-scala> nth(2, List(1, 1, 2, 3, 5, 8))
-res0: Int = 2
-```
+  ``` scala
+  scala> nth(2, List(1, 1, 2, 3, 5, 8))
+  res0: Int = 2
+  ```
 
 ### [P04](https://github.com/codingkapoor/99-scala-problems/blob/master/src/main/scala/com/codingkapoor/p99/_01_lists/P04.scala) (*) Find the number of elements of a list.
-``` scala
-scala> length(List(1, 1, 2, 3, 5, 8))
-res0: Int = 6
-```
+  ``` scala
+  scala> length(List(1, 1, 2, 3, 5, 8))
+  res0: Int = 6
+  ```
 
 ### [P05](https://github.com/codingkapoor/99-scala-problems/blob/master/src/main/scala/com/codingkapoor/p99/_01_lists/P05.scala) (*) Reverse a list.
-``` scala
-scala> reverse(List(1, 1, 2, 3, 5, 8))
-res0: List[Int] = List(8, 5, 3, 2, 1, 1)
-```
+  ``` scala
+  scala> reverse(List(1, 1, 2, 3, 5, 8))
+  res0: List[Int] = List(8, 5, 3, 2, 1, 1)
+  ```
 
 ### [P06](https://github.com/codingkapoor/99-scala-problems/blob/master/src/main/scala/com/codingkapoor/p99/_01_lists/P06.scala) (*) Find out whether a list is a palindrome.
-``` scala
-scala> isPalindrome(List(1, 2, 3, 2, 1))
-res0: Boolean = true
-```
+  ``` scala
+  scala> isPalindrome(List(1, 2, 3, 2, 1))
+  res0: Boolean = true
+  ```
 
 ### [P07](https://github.com/codingkapoor/99-scala-problems/blob/master/src/main/scala/com/codingkapoor/p99/_01_lists/P07.scala) (**) Flatten a nested list structure.
 ``` scala
@@ -206,16 +206,16 @@ You may find more about this combinatorial problem in a good book on discrete ma
 
 ### [P28](https://github.com/codingkapoor/99-scala-problems/blob/master/src/main/scala/com/codingkapoor/p99/_01_lists/P28.scala) (**) Sorting a list of lists according to length of sublists.
 a) We suppose that a list contains elements that are lists themselves. The objective is to sort the elements of the list according to their length. E.g. short lists first, longer lists later, or vice versa.
-```
-scala> lsort(List(List('a, 'b, 'c), List('d, 'e), List('f, 'g, 'h), List('d, 'e), List('i, 'j, 'k, 'l), List('m, 'n), List('o)))
-res0: List[List[Symbol]] = List(List('o), List('d, 'e), List('d, 'e), List('m, 'n), List('a, 'b, 'c), List('f, 'g, 'h), List('i, 'j, 'k, 'l))
-```
+  ```
+  scala> lsort(List(List('a, 'b, 'c), List('d, 'e), List('f, 'g, 'h), List('d, 'e), List('i, 'j, 'k, 'l), List('m, 'n), List('o)))
+  res0: List[List[Symbol]] = List(List('o), List('d, 'e), List('d, 'e), List('m, 'n), List('a, 'b, 'c), List('f, 'g, 'h), List('i, 'j, 'k, 'l))
+  ```
 
 b) Again, we suppose that a list contains elements that are lists themselves. But this time the objective is to sort the elements according to their length frequency; i.e. in the default, sorting is done ascendingly, lists with rare lengths are placed, others with a more frequent length come later.
-```
-scala> lsortFreq(List(List('a, 'b, 'c), List('d, 'e), List('f, 'g, 'h), List('d, 'e), List('i, 'j, 'k, 'l), List('m, 'n), List('o)))
-res1: List[List[Symbol]] = List(List('i, 'j, 'k, 'l), List('o), List('a, 'b, 'c), List('f, 'g, 'h), List('d, 'e), List('d, 'e), List('m, 'n))
-```
+  ```
+  scala> lsortFreq(List(List('a, 'b, 'c), List('d, 'e), List('f, 'g, 'h), List('d, 'e), List('i, 'j, 'k, 'l), List('m, 'n), List('o)))
+  res1: List[List[Symbol]] = List(List('i, 'j, 'k, 'l), List('o), List('a, 'b, 'c), List('f, 'g, 'h), List('d, 'e), List('d, 'e), List('m, 'n))
+  ```
 
 Note that in the above example, the first two lists in the result have length 4 and 1 and both lengths appear just once. The third and fourth lists have length 3 and there are two list of this length. Finally, the last three lists have length 2. This is the most frequent length.
 
